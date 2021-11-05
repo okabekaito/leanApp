@@ -13,3 +13,86 @@
  *= require_tree .
  *= require_self
  */
+
+.top {
+  background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+}
+body {
+  background-color: #a6c0fe;
+}
+/* ここから下がボタンのCSS　*/
+.btn-surround {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  background-color: #a6c0fe;
+  text-align: center;
+  width: inherit;
+  min-width: 250px;
+  padding: 16px 16px;
+  position: relative;
+  opacity: 1 !important;
+  transition: all 0.3s;
+}
+.btn-surround:before,
+.btn-surround:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #a6c0fe;
+  top: 0;
+  pointer-events: none;
+}
+.btn-surround:before {
+  left: 0;
+  width: 0;
+  height: 2px;
+}
+.btn-surround:after {
+  right: 0;
+  width: 2px;
+  height: 0;
+}
+.btn-surround:hover {
+  background-color: #fff;
+  color: #a6c0fe;
+}
+.btn-surround:hover:before {
+  width: 100%;
+  transition: width 0.2s 0.2s;
+}
+.btn-surround:hover:after {
+  height: 100%;
+  transition: height 0.1s 0.4s;
+}
+.btn-surround:hover span:before {
+  width: 100%;
+  transition: width 0.2s 0.5s;
+}
+.btn-surround:hover span:after {
+  height: 100%;
+  transition: height 0.1s 0.7s;
+}
+.btn-surround span:before,
+.btn-surround span:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #a6c0fe;
+  bottom: 0;
+  pointer-events: none;
+}
+.btn-surround span:before {
+  right: 0;
+  width: 0;
+  height: 2px;
+}
+.btn-surround span:after {
+  left: 0;
+  width: 2px;
+  height: 0;
+}
+.nav-color {
+  background-color: #c3a6fe;
+}

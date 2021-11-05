@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LearnApp</title>
+    <title>Learn App</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,33 @@
   </head>
 
   <body>
+    <% if logged_in?%>
+      <nav class="navbar  bg-secondary">
+        <div class="container-fluid">
+          <%=link_to"Learn App",notes_path,class: "navbar-brand text-white"%>
+          <ul class ="navbar-nav text-center">
+              <li class = "nav-item">
+              <%= link_to "ノートを作る", new_note_path, class: "nav-link text-white"%>
+            </li>
+              <li class = "nav-item">
+                <%= link_to "ログアウト", logout_path, class: "nav-link text-white", method: :delete %>
+              </li>
+  <%end%>
+        </ul>
+      </div>
+    </nav>
+
+        <% if flash[:notice] %>
+          <div class="alert alert-success" role="alert">
+            <%= flash[:notice] %>
+          </div>
+        <% end %>
+        <%if flash[:alert]%>
+          <div class="alert alert-danger" role="alert">
+            <%= flash[:alert]%>
+          </div>
+        <% end %>
     <%= yield %>
+
   </body>
 </html>
