@@ -1,23 +1,15 @@
-<div class = "row text-center">
-      <h1 class = "col-12">一覧ページ</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Author</th>
-        <th>created_at</th>
-      </tr>
-    </thead>
-  
-    <tbody>
+      <h1>一覧ページ</h1>
+<div class = "d-flex justify-content-center flex-wrap col-12 mb-2">
       <% @notes.each do |note| %>
-        <tr>
-          <td><%= note.title %></td>
-          <td><%= note.author %></td>
-          <td><%= note.created_at %></td>
-          <td><button type="button" class="btn btn-outline-secondary"><%= link_to 'Show', note %></button></td>
-        </tr>
+        <div class ="border col-7 mb-2 text-center bg-light">
+          <h3>タイトル</h3>
+          <p><%= note.title %></p>
+          <h3>作成者</h3>
+          <p><%= note.author %></p>
+          <h3>作成日</h3>
+          <p ><%= note.created_at %></p>
+          <button type="button" class="btn btn-outline-secondary"><%= link_to '詳細', note %></button></td>
+          <button class = "btn btn-outline-danger "><%= link_to '削除',  note, method: :delete, data: { confirm: "削除してよろしいですか?" } %></button>
+        </div>
       <% end %>
-    </tbody>
-  </table>
 </div>
